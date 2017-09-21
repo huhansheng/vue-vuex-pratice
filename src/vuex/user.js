@@ -5,7 +5,7 @@ const GET_USER_INFO_ERR = 'USER.GET_USER_INFO_ERR';
 const user = {
   state: {
     loading: false,
-    userInfo: null,
+    userInfo: null
   },
   mutactions: {
     GET_USER_INFO: state => {
@@ -13,7 +13,7 @@ const user = {
     }
   },
   actions: {
-  	getUserInfo({ commit }, params) {
+  	getUserInfo ({ commit }, params) {
   		commit(GET_USER_INFO, params);
   	}
   }
