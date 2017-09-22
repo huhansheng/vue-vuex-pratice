@@ -27,12 +27,6 @@ npm run e2e
 npm test
 ```
 
-## 技术栈
-```bash  
-# 基于vue-cli搭建  
-vue+vue-router+vuex
-```
-
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 
