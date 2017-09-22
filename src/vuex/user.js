@@ -1,10 +1,11 @@
 
-import actionMiddleware from '@/util/actionMiddleware';
-import request from '@/util/request';
+import actionMiddleware from '../util/actionMiddleware';
+import request from '../util/request';
+import {GET_USER_INFO_URL} from '../api/constants';
 
 const GET_USER_INFO = 'USER.GET_USER_INFO';
 const GET_USER_INFO_LOAD = 'USER.GET_USER_INFO_LOAD';
-const GET_USER_INIFO_SUC = 'USER.GET_USER_INIFO_SUC';
+const GET_USER_INFO_SUC = 'USER.GET_USER_INFO_SUC';
 const GET_USER_INFO_ERR = 'USER.GET_USER_INFO_ERR';
 
 const user = {
@@ -13,8 +14,8 @@ const user = {
     result: '',
     userInfo: {}
   },
-  getter () {
-
+  getter: {
+    getLength: (state) => state.result.length
   },
   mutations: {
     [GET_USER_INFO] (state, payload) {
@@ -23,7 +24,7 @@ const user = {
     [GET_USER_INFO_LOAD] (state) {
       state.loading = true;
     },
-    [GET_USER_INIFO_SUC] (state, action) {
+    [GET_USER_INFO_SUC] (state, action) {
       state.loading = false;
       state.result = action.result;
       state.userInfo = action.payload;
@@ -38,8 +39,8 @@ const user = {
     },
     getUser (store, payload) {
       const action = {
-        type: [GET_USER_INFO_LOAD, GET_USER_INIFO_SUC, GET_USER_INFO_ERR],
-        promise: request.get('http://localhost:3000/server', payload),
+        type: [GET_USER_INFO_LOAD, GET_USER_INFO_SUC, GET_USER_INFO_ERR],
+        promise: request.get(GET_USER_INFO_URL, payload),
         payload
       };
       actionMiddleware(store, action);

@@ -27,8 +27,8 @@
 </template>
 
 <script>
-  import { mapState, mapActions } from 'vuex';
-  import { buyMsgDetail } from '@/pages/home/level2.config';
+  import { mapState, mapGetters, mapActions } from 'vuex';
+  import { buyMsgDetail } from '@/pages/home/home.config';
 
 export default {
     data () {
@@ -45,7 +45,8 @@ export default {
     computed: {
       ...mapState({
         user: (state) => state.user
-      })
+      }),
+      ...mapGetters(['getLength'])
     },
     methods: {
       lookOrder () {

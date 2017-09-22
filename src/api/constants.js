@@ -1,3 +1,3 @@
-import HOST from './api.config';
+import {HOST} from './api.config';
 
-export const GET_USER_INFO_URL = HOST + 'api/getUserInfo';
+export const GET_USER_INFO_URL = HOST + 'server';
