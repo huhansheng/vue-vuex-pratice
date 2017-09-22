@@ -23,39 +23,39 @@
       </div>
     </div>
   </div>
-	
+
 </template>
 
 <script>
-  import { mapState,  mapActions } from 'vuex';
+  import { mapState, mapActions } from 'vuex';
   import { buyMsgDetail } from '@/pages/home/level2.config';
 
-	export default {
+export default {
     data () {
       return {
         buyMsgDetail,
         buyDetailMsg: {
-          money : '8.00元',
-          accountTel : '18387688860',
-          payType : '微信支付',
-          productType : '包月' 
+          money: '8.00元',
+          accountTel: '18387688860',
+          payType: '微信支付',
+          productType: '包月'
         }
-      }
+      };
     },
     computed: {
       ...mapState({
-        user: (state) => state.user,
-      }),
+        user: (state) => state.user
+      })
     },
     methods: {
-      lookOrder() {
-        let user = { name: 'handsome', interest: 'looking book'};
+      lookOrder () {
+        let user = {name: 'handsome', interest: 'looking book'};
         // this.getUserInfo(user);
         this.getUser(user);
       },
       ...mapActions(['getUserInfo', 'getUser'])
     }
-	};
+};
 </script>
 
 <style lang="less" scoped>
@@ -96,7 +96,7 @@
       height: 35px;
     }
     i {
-      font-size: 40px;      
+      font-size: 40px;
       color: #5cb85c;
       animation: complex .5s ease-in;
       -webkit-animation: complex .5s ease-in;

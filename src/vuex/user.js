@@ -13,30 +13,30 @@ const user = {
     result: '',
     userInfo: {}
   },
-  getter() {
-    
+  getter () {
+
   },
   mutations: {
-    [GET_USER_INFO](state, payload) {
+    [GET_USER_INFO] (state, payload) {
       state.userInfo = payload;
-    }, 
-    [GET_USER_INFO_LOAD](state) {
+    },
+    [GET_USER_INFO_LOAD] (state) {
       state.loading = true;
     },
-    [GET_USER_INIFO_SUC](state, action) {
+    [GET_USER_INIFO_SUC] (state, action) {
       state.loading = false;
       state.result = action.result;
       state.userInfo = action.payload;
     },
-    [GET_USER_INFO_ERR](state) {
+    [GET_USER_INFO_ERR] (state) {
       state.loading = false;
     }
   },
   actions: {
-  	getUserInfo({ commit }, payload) {
-  		commit(GET_USER_INFO, params);
-  	},
-    getUser(store, payload) {
+    getUserInfo ({ commit }, payload) {
+      commit(GET_USER_INFO, payload);
+    },
+    getUser (store, payload) {
       const action = {
         type: [GET_USER_INFO_LOAD, GET_USER_INIFO_SUC, GET_USER_INFO_ERR],
         promise: request.get('http://localhost:3000/server', payload),

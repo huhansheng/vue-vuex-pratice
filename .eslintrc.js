@@ -2,18 +2,26 @@
 
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
-  parserOptions: {
-    sourceType: 'module'
+  // parser: 'babel-eslint',
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
   },
-  env: {
-    browser: true,
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    },
+    "sourceType": "module"
   },
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
   extends: 'standard',
   // required to lint *.vue files
   plugins: [
-    'html'
+    'html',
+    'standard',
+    'promise'
   ],
   // add your custom rules here
   'rules': {
@@ -41,5 +49,7 @@ module.exports = {
     "comma-style": [2, "last"],
     //非空数组中不应该有多余的空格
     "array-bracket-spacing": [2, 'never'],
+    //没有用到的变量、引入提示，但不报错
+    "no-unused-vars": 0
   }
 }

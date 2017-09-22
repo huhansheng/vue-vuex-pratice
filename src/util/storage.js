@@ -1,5 +1,5 @@
 const cookieStorageService = (function () {
-	// 设置数据
+  // 设置数据
   const setData = function (key, data, expire) {
     const cookieData = data;
 
@@ -9,8 +9,7 @@ const cookieStorageService = (function () {
       const cookieStr = `${key}=${cookieData};expires=${expire};path=/`;
     }
   };
-
-	// 获取数据
+  // 获取数据
   const getData = function (key) {
     const arr = document.cookie.match(new RegExp(`(^| )${key}=([^;]*)(;|$)`));
     if (arr !== null) {

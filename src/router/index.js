@@ -7,20 +7,19 @@ Vue.use(Router);
 
 const routes = [
   {
-  	path: '/',
-  	name: 'Hello',
-  	component: Hello
+    path: '/',
+    name: 'Hello',
+    component: Hello
   },
   {
-  	path: '/home',
-  	name: 'Home',
+    path: '/home',
+    name: 'Home',
     meta: { requiresAuth: true },
-  	component: Home
+    component: Home
   }
 ];
 
-
-const router =  new Router({
+const router = new Router({
   routes
 });
 
@@ -37,10 +36,9 @@ router.beforeEach((to, from, next) => {
     //   next()
     // }
   } else {
-    next() // 确保一定要调用 next()
+    next(); // 确保一定要调用 next()
   }
 });
 
 export default router;
-
 
