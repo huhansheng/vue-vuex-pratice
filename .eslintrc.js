@@ -40,6 +40,6 @@ module.exports = {
     //如果逗号可以放在行首或行尾时，那么请放在行尾
     "comma-style": [2, "last"],
     //非空数组中不应该有多余的空格
-    'array-bracket-spacing': [2, 'never'],
+    "array-bracket-spacing": [2, 'never'],
   }
 }

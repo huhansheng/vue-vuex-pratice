@@ -14,10 +14,33 @@ const routes = [
   {
   	path: '/home',
   	name: 'Home',
+    meta: { requiresAuth: true },
   	component: Home
   }
 ];
 
-export default new Router({
+
+const router =  new Router({
   routes
 });
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    // 处理跳转验权
+    next();
+    // if (!auth.loggedIn()) {
+    //   next({
+    //     path: '/login',
+    //     query: { redirect: to.fullPath }
+    //   })
+    // } else {
+    //   next()
+    // }
+  } else {
+    next() // 确保一定要调用 next()
+  }
+});
+
+export default router;
+
+

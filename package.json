@@ -15,6 +15,7 @@
     "mock": "json-server --watch src/api/db.json --port 3000 --middlewares src/api/mockServer.js"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "vue": "^2.4.2",
     "vue-router": "^2.7.0",
     "vuex": "^2.4.0"

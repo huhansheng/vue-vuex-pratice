@@ -33,7 +33,7 @@ const cookieStorageService = (function () {
     set: setData,
     remove: removeData
   };
-}());
+})();
 
 // 本地存储服务
 const localStorageService = (function () {
