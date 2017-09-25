@@ -2,5 +2,9 @@
   "server": {
     "feedbackMsg": "success",
     "result": "Hello, world!"
+  },
+  "getProductList": {
+    "feedbackMsg": "success",
+    "result": []
   }
 }
